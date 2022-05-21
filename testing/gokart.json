@@ -8,7 +8,7 @@
     "color": "schwarz-weiss",
     "brake_typ": "hydraulisch"
   },
-    {
+  {
     "gokart_number": "GKNMA02QJ",
     "fuel_typ": "benzin",
     "ps": 9,
@@ -17,7 +17,7 @@
     "color": "schwarz-gelb",
     "brake_typ": "hydraulisch"
   },
-    {
+  {
     "gokart_number": "GKNMA03HJ",
     "fuel_typ": "benzin",
     "ps": 9,
@@ -26,7 +26,7 @@
     "color": "schwarz",
     "brake_typ": "hydraulisch"
   },
-    {
+  {
     "gokart_number": "GKNMA04LJ",
     "fuel_typ": "benzin",
     "ps": 9,
@@ -35,7 +35,7 @@
     "color": "schwarz-rot",
     "brake_typ": "hydraulisch"
   },
-    {
+  {
     "gokart_number":"GKNMA05FK",
     "fuel_typ": "benzin",
     "ps": 9,
@@ -44,7 +44,7 @@
     "color": "schwarz-weiss",
     "brake_typ": "hydraulisch"
   },
-    {
+  {
     "gokart_number": "GKNMA06FL",
     "fuel_typ": "benzin",
     "ps": 9,
@@ -53,7 +53,7 @@
     "color": "schwarz-weiss",
     "brake_typ": "hydraulisch"
   },
-    {
+  {
     "gokart_number": "GKNMA07YJ",
     "fuel_typ": "benzin",
     "ps": 9,
@@ -62,7 +62,7 @@
     "color": "schwarz-weiss",
     "brake_typ": "hydraulisch"
   },
-    {
+  {
     "gokart_number": "GKNMA08XJ",
     "fuel_typ": "benzin",
     "ps": 9,
@@ -71,7 +71,7 @@
     "color": "schwarz-weiss",
     "brake_typ": "hydraulisch"
   },
-    {
+  {
     "gokart_number": "GKNMA09CJ",
     "fuel_typ": "benzin",
     "ps": 9,
@@ -80,7 +80,7 @@
     "color": "schwarz-weiss",
     "brake_typ": "hydraulisch"
   },
-      {
+  {
     "gokart_number": "GKNMA010UP",
     "fuel_typ": "benzin",
     "ps": 9,

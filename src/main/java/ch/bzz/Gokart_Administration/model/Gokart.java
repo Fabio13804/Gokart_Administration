@@ -5,6 +5,7 @@ package ch.bzz.Gokart_Administration.model;
  */
 
 public class Gokart {
+
     private String gokart_number;
     private String fuel_typ;
     private int ps;

@@ -1,0 +1,238 @@
+{
+	"id": "642d48c9-258c-4553-ba6b-dcfe961f290c",
+	"name": "Gokart_Administration",
+	"timestamp": "2022-05-20T14:36:46.840Z",
+	"collection_id": "d0729a89-f070-40f7-96bb-a1da0c58366e",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "1e3bfce3-8f68-4b19-8ed8-ef4735f37ef6",
+			"name": "allGokarts",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/list",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "70bfb4e3-80c2-4cf8-8c99-29df5c3a1251",
+			"name": "allCircuits",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/list",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "cee97f04-6501-49e6-a860-295a7550ae74",
+			"name": "allKarting_companys",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/list",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a34e021b-4c5e-4ce0-9f4e-ac87a0426ae7",
+			"name": "GokartsByID",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/read?uuid=GKNMA02QJ",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9d5ae358-799c-43aa-80b2-78d7fea7de24",
+			"name": "CircuitByID",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/read?id=3",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1624b026-f015-42d5-aa87-9ccd75a0cc8c",
+			"name": "KartingCompanyByID",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/read?id=2",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "45dc6995-c220-4e20-b94d-3c2399db37b5",
+			"name": "GokartID_outOfRange",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/read?uuid=GKNMA0",
+			"time": 6,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "27174b57-36b8-4f4e-ac3f-4bbbea194aa6",
+			"name": "CircuitID_outOfRange",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/read?id=7",
+			"time": 3,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f21ca810-43a9-4d00-a063-10802215365b",
+			"name": "KartingCompany_outOfRange",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/read?id=6",
+			"time": 4,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "26b56e33-c827-4b68-88af-ad2494d1bf31",
+			"name": "wrongURL",
+			"url": "http://localhost:8080/Gokart_Administration-1.0/kartingCompany",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 69,
+	"collection": {
+		"requests": [
+			{
+				"id": "1e3bfce3-8f68-4b19-8ed8-ef4735f37ef6",
+				"method": "GET"
+			},
+			{
+				"id": "70bfb4e3-80c2-4cf8-8c99-29df5c3a1251",
+				"method": "GET"
+			},
+			{
+				"id": "cee97f04-6501-49e6-a860-295a7550ae74",
+				"method": "GET"
+			},
+			{
+				"id": "a34e021b-4c5e-4ce0-9f4e-ac87a0426ae7",
+				"method": "GET"
+			},
+			{
+				"id": "9d5ae358-799c-43aa-80b2-78d7fea7de24",
+				"method": "GET"
+			},
+			{
+				"id": "1624b026-f015-42d5-aa87-9ccd75a0cc8c",
+				"method": "GET"
+			},
+			{
+				"id": "45dc6995-c220-4e20-b94d-3c2399db37b5",
+				"method": "GET"
+			},
+			{
+				"id": "27174b57-36b8-4f4e-ac3f-4bbbea194aa6",
+				"method": "GET"
+			},
+			{
+				"id": "f21ca810-43a9-4d00-a063-10802215365b",
+				"method": "GET"
+			},
+			{
+				"id": "26b56e33-c827-4b68-88af-ad2494d1bf31",
+				"method": "GET"
+			}
+		]
+	}
+}

@@ -2,21 +2,21 @@
   {
     "karting_companyID": 1,
     "name": "wohle",
-    "restaurant": false    
+    "restaurant": false
   },
-    {
+  {
     "karting_companyID": 2,
     "name": "wohle",
-    "restaurant": true    
+    "restaurant": true
   },
-    {
+  {
     "karting_companyID": 3,
     "name": "wohle",
-    "restaurant": true    
+    "restaurant": true
   },
-    {
+  {
     "karting_companyID": 4,
     "name": "wohle",
-    "restaurant": false    
+    "restaurant": false
   }
 ]

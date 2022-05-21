@@ -30,9 +30,13 @@ public class GokartService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readBooks(@QueryParam("uuid") String gokart_number) {
+        int httpStatus = 200;
         Gokart gokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
+        if (gokart == null) {
+            httpStatus = 410;
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(gokart)
                 .build();
     }

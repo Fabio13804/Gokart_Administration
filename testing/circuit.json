@@ -1,0 +1,34 @@
+[
+  {
+    "circuitID": 1,
+    "track_typ": "indoor",
+    "distance": 5.3,
+    "name": "wohle",
+    "number_of_curves": 15,
+    "number_of_straights": 3
+  },
+  {
+    "circuitID": 2,
+    "track_typ": "outdoor",
+    "distance": 5.3,
+    "name": "wohle",
+    "number_of_curves": 4,
+    "number_of_straights": 3
+  },
+  {
+    "circuitID": 3,
+    "track_typ": "indoor",
+    "distance": 5.3,
+    "name": "wohle",
+    "number_of_curves": 12,
+    "number_of_straights": 3
+  },
+  {
+    "circuitID": 4,
+    "track_typ": "outdoor",
+    "distance": 5.3,
+    "name": "wohle",
+    "number_of_curves": 4,
+    "number_of_straights": 3
+  }
+]
