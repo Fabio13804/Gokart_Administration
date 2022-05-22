@@ -11,7 +11,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"list"
+					]
 				}
 			},
 			"response": []
@@ -22,7 +33,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"list"
+					]
 				}
 			},
 			"response": []
@@ -33,7 +55,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"list"
+					]
 				}
 			},
 			"response": []
@@ -44,7 +77,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/read?uuid=GKNMA02QJ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "GKNMA02QJ"
+						}
+					]
 				}
 			},
 			"response": []
@@ -55,7 +105,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/read?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"read"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
 				}
 			},
 			"response": []
@@ -66,7 +133,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/read?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"read"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
 				}
 			},
 			"response": []
@@ -77,7 +161,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/read?uuid=GKNMA0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "GKNMA0"
+						}
+					]
 				}
 			},
 			"response": []
@@ -88,7 +189,24 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/read?id=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"read"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
 				}
 			},
 			"response": []
@@ -99,7 +217,44 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/read?id=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"read"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wrongURL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/kartingCompany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"kartingCompany"
+					]
 				}
 			},
 			"response": []
