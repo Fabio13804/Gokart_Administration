@@ -1,6 +1,15 @@
 package ch.bzz.Gokart_Administration.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+/**
+ * a Circuit in Gokart_Administration
+ */
+
 public class Circuit {
+
+    @JsonIgnore
+    private Karting_company karting_company;
 
     private int circuitID;
     private String track_typ;
@@ -8,6 +17,14 @@ public class Circuit {
     private String name;
     private int number_of_curves;
     private int number_of_straights;
+
+    public Karting_company getKarting_company() {
+        return karting_company;
+    }
+
+    public void setKarting_company(Karting_company karting_company) {
+        this.karting_company = karting_company;
+    }
 
     public int getCircuitID() {
         return circuitID;

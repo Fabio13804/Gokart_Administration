@@ -1,10 +1,15 @@
 package ch.bzz.Gokart_Administration.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * a Gokart in Gokart_Administration
  */
 
 public class Gokart {
+
+    @JsonIgnore
+    private Karting_company karting_company;
 
     private String gokart_number;
     private String fuel_typ;
@@ -13,6 +18,14 @@ public class Gokart {
     private double weight;
     private String color;
     private String brake_typ;
+
+    public Karting_company getKarting_company() {
+        return karting_company;
+    }
+
+    public void setKarting_company(Karting_company karting_company) {
+        this.karting_company = karting_company;
+    }
 
     public String getGokart_number() {
         return gokart_number;
