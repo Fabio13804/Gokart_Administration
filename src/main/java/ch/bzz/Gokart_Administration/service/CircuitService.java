@@ -25,7 +25,7 @@ public class CircuitService {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readBooks(@QueryParam("id") int circuitID) {
+    public Response readCircuits(@QueryParam("id") int circuitID) {
         int httpStatus = 200;
         Circuit circuit = DataHandler.getInstance().readCircuitByID(circuitID);
         if (circuit == null) {
@@ -40,38 +40,35 @@ public class CircuitService {
 
     /**
      * inserts a new book
-     * @param fuel_typ the fuel_typ
-     * @param ps the amount of ps
-     * @param max_speed the max. speed
-     * @param weight the weight
-     * @param color the color
-     * @param brake_typ the brake typ
+     * @param track_typ the fuel_typ
+     * @param distance the max. speed
+     * @param name the color
+     * @param number_of_curves the amount of ps
+     * @param number_of_straights the weight
      * @return Response
      */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response insertBook(
-            @FormParam("fuel_typ") String fuel_typ,
-            @FormParam("ps") int ps,
-            @FormParam("max_speed") int max_speed,
-            @FormParam("weight") double weight,
-            @FormParam("color") String color,
-            @FormParam("brake_typ") String brake_typ
+    public Response insertCircuit(
+            @FormParam("track_typ") String track_typ,
+            @FormParam("distance") double distance,
+            @FormParam("name") String name,
+            @FormParam("number_of_curves") int number_of_curves,
+            @FormParam("number_of_straights") int number_of_straights
     ) {
-        Gokart gokart = new Gokart();
-        gokart.setGokart_number("GKNMA" + Math.floor(Math.random() * 101) + "FJ");
+        Circuit circuit = new Circuit();
+        circuit.setCircuitID((int) Math.floor(Math.random() * 101));
         setAttributes(
-                gokart,
-                fuel_typ,
-                ps,
-                max_speed,
-                weight,
-                color,
-                brake_typ
+                circuit,
+                track_typ,
+                distance,
+                name,
+                number_of_curves,
+                number_of_straights
         );
 
-        DataHandler.insertGokart(gokart);
+        DataHandler.insertCircuit(circuit);
         return Response
                 .status(200)
                 .entity("")
@@ -80,41 +77,38 @@ public class CircuitService {
 
     /**
      * updates a new book
-     * @param gokart_number the key
-     * @param fuel_typ the title
-     * @param ps the author
-     * @param max_speed the uuid of the publisher
-     * @param weight the price
-     * @param color the isbn
-     * @param brake_typ the isbn
+     * @param track_typ the fuel_typ
+     * @param distance the max. speed
+     * @param name the color
+     * @param number_of_curves the amount of ps
+     * @param number_of_straights the weight
      * @return Response
      */
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateBook(
-            @FormParam("gokart_number") String gokart_number,
-            @FormParam("fuel_typ") String fuel_typ,
-            @FormParam("ps") int ps,
-            @FormParam("max_speed") int max_speed,
-            @FormParam("weight") double weight,
-            @FormParam("color") String color,
-            @FormParam("brake_typ") String brake_typ
+    public Response updateCircuit(
+            @FormParam("circuitID") int circuitID,
+            @FormParam("track_typ") String track_typ,
+            @FormParam("distance") double distance,
+            @FormParam("name") String name,
+            @FormParam("number_of_curves") int number_of_curves,
+            @FormParam("number_of_straights") int number_of_straights
+
     ) {
         int httpStatus = 200;
-        Gokart gokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
-        if (gokart != null) {
+        Circuit circuit = DataHandler.getInstance().readCircuitByID(circuitID);
+        if (circuit != null) {
             setAttributes(
-                    gokart,
-                    fuel_typ,
-                    ps,
-                    max_speed,
-                    weight,
-                    color,
-                    brake_typ
+                    circuit,
+                    track_typ,
+                    distance,
+                    name,
+                    number_of_curves,
+                    number_of_straights
             );
 
-            DataHandler.updateGokart();
+            DataHandler.updateCircuit();
         } else {
             httpStatus = 410;
         }
@@ -126,17 +120,17 @@ public class CircuitService {
 
     /**
      * deletes a book identified by its uuid
-     * @param gokart_number  the key
+     * @param circuitID  the key
      * @return  Response
      */
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response deleteBook(
-            @QueryParam("gokart_number") String gokart_number
+    public Response deleteCircuit(
+            @QueryParam("circuitID") int circuitID
     ) {
         int httpStatus = 200;
-        if (!DataHandler.deleteGokart(gokart_number)) {
+        if (!DataHandler.deleteCircuit(circuitID)) {
             httpStatus = 410;
         }
         return Response
@@ -149,28 +143,26 @@ public class CircuitService {
 
     /**
      * sets the attributes for the gokart-object
-     * @param gokart  the gokart-object
-     * @param fuel_typ  the fuel typ
-     * @param ps  the author
-     * @param max_speed  the uuid of the publisher
-     * @param weight  the price
-     * @param color the color
-     * @param brake_typ the brake typ
+     * @param track_typ the key
+     * @param circuit the title
+     * @param number_of_curves the author
+     * @param distance the uuid of the publisher
+     * @param number_of_straights the price
+     * @param name the isbn
+     * @return Response
      */
     private void setAttributes(
-            Gokart gokart,
-            String fuel_typ,
-            int ps,
-            int max_speed,
-            double weight,
-            String color,
-            String brake_typ
+            Circuit circuit,
+            String track_typ,
+            double distance,
+            String name,
+            int number_of_curves,
+            int number_of_straights
     ) {
-        gokart.setFuel_typ(fuel_typ);
-        gokart.setPs(ps);
-        gokart.setMax_speed(max_speed);
-        gokart.setWeight(weight);
-        gokart.setColor(color);
-        gokart.setBrake_typ(brake_typ);
+        circuit.setTrack_typ(track_typ);
+        circuit.setDistance(distance);
+        circuit.setName(name);
+        circuit.setNumber_of_curves(number_of_curves);
+        circuit.setNumber_of_straights(number_of_straights);
     }
 }

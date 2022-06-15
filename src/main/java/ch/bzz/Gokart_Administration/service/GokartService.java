@@ -52,7 +52,7 @@ public class GokartService {
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response insertBook(
+    public Response insertGokart(
             @FormParam("fuel_typ") String fuel_typ,
             @FormParam("ps") int ps,
             @FormParam("max_speed") int max_speed,
@@ -93,7 +93,7 @@ public class GokartService {
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateBook(
+    public Response updateGokart(
             @FormParam("gokart_number") String gokart_number,
             @FormParam("fuel_typ") String fuel_typ,
             @FormParam("ps") int ps,
@@ -133,7 +133,7 @@ public class GokartService {
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response deleteBook(
+    public Response deleteGokartk(
             @QueryParam("gokart_number") String gokart_number
     ) {
         int httpStatus = 200;
