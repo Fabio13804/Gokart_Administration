@@ -4,9 +4,12 @@ import ch.bzz.Gokart_Administration.model.Circuit;
 import ch.bzz.Gokart_Administration.model.Gokart;
 import ch.bzz.Gokart_Administration.model.Karting_company;
 import ch.bzz.Gokart_Administration.service.Config;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -103,7 +106,7 @@ public class DataHandler {
      * @param circuitID
      * @return the karting_company (null=not found)
      */
-    public Circuit readCircuitByUUID(int circuitID) {
+    public Circuit readCircuitByID(int circuitID) {
         Circuit circuit = null;
         for (Circuit entry : getCircuitList()) {
             if (entry.getCircuitID() == (circuitID)) {
@@ -230,6 +233,111 @@ public class DataHandler {
     private void setCircuitList(List<Circuit> circuitList) {
         this.circuitList = circuitList;
     }
+
+    /**
+     * inserts a new gokart into the gokartList
+     *
+     * @param gokart the gokart to be saved
+     */
+    public static void insertGokart(Gokart gokart) {
+        getInstance().getGokartList().add(gokart);
+        getInstance().writeGokartJSON();
+    }
+
+    /**
+     * writes the bookList to the JSON-file
+     */
+    private void writeGokartJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("gokartJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getInstance().getGokartList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    /**
+     * updates the bookList
+     */
+    public static void updateGokart() {
+        getInstance().writeGokartJSON();
+    }
+
+    /**
+     * deletes a book identified by the bookUUID
+     * @param gokart_number  the key
+     * @return  success=true/false
+     */
+    public static boolean deleteGokart(String gokart_number) {
+        Gokart gokart = getInstance().readGokartByGokart_number(gokart_number);
+        if (gokart != null) {
+            getInstance().getGokartList().remove(gokart);
+            getInstance().writeGokartJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * inserts a new circuit into the circuitList
+     *
+     * @param circuit the circuit to be saved
+     */
+    public static void insertCircuit(Circuit circuit) {
+        getInstance().getCircuitList().add(circuit);
+        getInstance().writeCircuitJSON();
+    }
+
+    /**
+     * writes the bookList to the JSON-file
+     */
+    private void writeCircuitJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("circuitJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getInstance().getCircuitList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    /**
+     * updates the bookList
+     */
+    public static void updateCircuit() {
+        getInstance().writeCircuitJSON();
+    }
+
+    /**
+     * deletes a circuit identified by the circuitID
+     * @param circuitID  the key
+     * @return  success=true/false
+     */
+    public static boolean deleteCircuit(int circuitID) {
+        Circuit circuit = getInstance().readCircuitByID(circuitID);
+        if (circuit != null) {
+            getInstance().getCircuitList().remove(circuit);
+            getInstance().writeCircuitJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 
 
 }

@@ -11,6 +11,7 @@ import java.util.List;
 public class Karting_company {
     private int karting_companyID;
     private List<Gokart> gokartList;
+    private List<Circuit> circuitList;
     private String name;
     private boolean restaurant;
 
@@ -29,6 +30,14 @@ public class Karting_company {
 
     public void setGokartList(List<Gokart> gokartList) {
         this.gokartList = gokartList;
+    }
+
+    public List<Circuit> getCircuitList() {
+        return circuitList;
+    }
+
+    public void setCircuitList(List<Circuit> circuitList) {
+        this.circuitList = circuitList;
     }
 
     public String getName() {
