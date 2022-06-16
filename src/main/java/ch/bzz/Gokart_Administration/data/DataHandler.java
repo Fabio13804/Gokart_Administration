@@ -340,4 +340,91 @@ public class DataHandler {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * inserts a new circuit into the circuitList
+     *
+     * @param karting_company the circuit to be saved
+     */
+    public static void insertKarting_company(Karting_company karting_company) {
+        getInstance().getKarting_companyList().add(karting_company);
+        getInstance().writeKarting_companyJSON();
+    }
+
+    /**
+     * writes the bookList to the JSON-file
+     */
+    private void writeKarting_companyJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("circuitJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getInstance().getKarting_companyList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    /**
+     * updates the bookList
+     */
+    public static void updateKarting_company() {
+        getInstance().writeKarting_companyJSON();
+    }
+
+    /**
+     * deletes a circuit identified by the circuitID
+     * @param karting_companyID  the key
+     * @return  success=true/false
+     */
+    public static boolean deleteKarting_company(int karting_companyID) {
+        Karting_company karting_company = getInstance().readKarting_companyByUUID(karting_companyID);
+        if (karting_company != null) {
+            getInstance().getCircuitList().remove(karting_company);
+            getInstance().writeCircuitJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
 }

@@ -2,7 +2,6 @@ package ch.bzz.Gokart_Administration.service;
 
 import ch.bzz.Gokart_Administration.data.DataHandler;
 import ch.bzz.Gokart_Administration.model.Circuit;
-import ch.bzz.Gokart_Administration.model.Gokart;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -25,7 +24,7 @@ public class CircuitService {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readCircuits(@QueryParam("id") int circuitID) {
+    public Response readCircuit(@QueryParam("id") int circuitID) {
         int httpStatus = 200;
         Circuit circuit = DataHandler.getInstance().readCircuitByID(circuitID);
         if (circuit == null) {
@@ -39,7 +38,7 @@ public class CircuitService {
 
 
     /**
-     * inserts a new book
+     * inserts a new circuit
      * @param track_typ the fuel_typ
      * @param distance the max. speed
      * @param name the color
@@ -76,7 +75,7 @@ public class CircuitService {
     }
 
     /**
-     * updates a new book
+     * updates a new circuit
      * @param track_typ the fuel_typ
      * @param distance the max. speed
      * @param name the color
@@ -119,7 +118,7 @@ public class CircuitService {
     }
 
     /**
-     * deletes a book identified by its uuid
+     * deletes a circuit identified by its uuid
      * @param circuitID  the key
      * @return  Response
      */
@@ -142,7 +141,7 @@ public class CircuitService {
 
 
     /**
-     * sets the attributes for the gokart-object
+     * sets the attributes for the circuit-object
      * @param track_typ the key
      * @param circuit the title
      * @param number_of_curves the author
