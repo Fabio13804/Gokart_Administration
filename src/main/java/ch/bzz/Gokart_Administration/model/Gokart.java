@@ -2,6 +2,9 @@ package ch.bzz.Gokart_Administration.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
+
 /**
  * a Gokart in Gokart_Administration
  */
@@ -11,6 +14,7 @@ public class Gokart {
     @JsonIgnore
     private Karting_company karting_company;
 
+    @FormParam("gokart_mumber")
     private String gokart_number;
     private String fuel_typ;
     private int ps;

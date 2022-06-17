@@ -4,6 +4,7 @@ package ch.bzz.Gokart_Administration.service;
 import ch.bzz.Gokart_Administration.data.DataHandler;
 import ch.bzz.Gokart_Administration.model.Gokart;
 
+import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -26,7 +27,9 @@ public class GokartService {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readGokart(@QueryParam("uuid") String gokart_number) {
+    public Response readGokart(
+            @NotEmpty
+            @QueryParam("uuid") String gokart_number) {
         int httpStatus = 200;
         Gokart gokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
         if (gokart == null) {
