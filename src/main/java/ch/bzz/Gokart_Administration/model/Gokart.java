@@ -2,7 +2,7 @@ package ch.bzz.Gokart_Administration.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
 import javax.ws.rs.FormParam;
 
 /**
@@ -16,11 +16,24 @@ public class Gokart {
 
     @FormParam("gokart_mumber")
     private String gokart_number;
+       @Pattern(regexp = "[A-Za-z]{5}[1-9]{1,}[A-Za-z]{2}")
+
+    @FormParam("fuel_typ")
     private String fuel_typ;
+
+    @FormParam("ps")
     private int ps;
+
+    @FormParam("max_speed")
     private int max_speed;
+
+    @FormParam("weight")
     private double weight;
+
+    @FormParam("color")
     private String color;
+
+    @FormParam("brake_typ")
     private String brake_typ;
 
     public Karting_company getKarting_company() {

@@ -64,7 +64,7 @@ public class GokartService {
             @FormParam("brake_typ") String brake_typ
     ) {
         Gokart gokart = new Gokart();
-        gokart.setGokart_number("GKNMA" + Math.floor(Math.random() * 101) + "FJ");
+        gokart.setGokart_number("GKNMA" + (int) Math.floor(Math.random() * 101) + "FJ");
         setAttributes(
                 gokart,
                 fuel_typ,

@@ -338,46 +338,10 @@ public class DataHandler {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
-     * inserts a new circuit into the circuitList
+     * inserts a new karting_company into the karting_companyList
      *
-     * @param karting_company the circuit to be saved
+     * @param karting_company the karting_company to be saved
      */
     public static void insertKarting_company(Karting_company karting_company) {
         getInstance().getKarting_companyList().add(karting_company);
@@ -393,7 +357,7 @@ public class DataHandler {
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String bookPath = Config.getProperty("circuitJSON");
+        String bookPath = Config.getProperty("kartingCompanyJSON");
         try {
             fileOutputStream = new FileOutputStream(bookPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
@@ -410,15 +374,15 @@ public class DataHandler {
     }
 
     /**
-     * deletes a circuit identified by the circuitID
+     * deletes a karting_company identified by the karting_companyID
      * @param karting_companyID  the key
      * @return  success=true/false
      */
     public static boolean deleteKarting_company(int karting_companyID) {
         Karting_company karting_company = getInstance().readKarting_companyByUUID(karting_companyID);
         if (karting_company != null) {
-            getInstance().getCircuitList().remove(karting_company);
-            getInstance().writeCircuitJSON();
+            getInstance().getKarting_companyList().remove(karting_company);
+            getInstance().writeKarting_companyJSON();
             return true;
         } else {
             return false;
