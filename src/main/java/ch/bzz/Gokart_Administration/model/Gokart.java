@@ -2,10 +2,7 @@ package ch.bzz.Gokart_Administration.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import javax.ws.rs.FormParam;
 
 /**
@@ -22,18 +19,25 @@ public class Gokart {
     private String gokart_number;
 
     @FormParam("fuel_typ")
+    @Size(min=3, max = 50)
     @NotEmpty
     private String fuel_typ;
 
     @FormParam("ps")
-    @NotNull
+    @NotEmpty
+    @Min(value = 1)
+    @Max(value = 200)
     private int ps;
 
     @FormParam("max_speed")
     @NotNull
+    @Min(value = 20)
+    @Max(value = 240)
     private int max_speed;
 
     @FormParam("weight")
+    @Min(value = 20)
+    @Max(value = 240)
     private double weight;
 
     @FormParam("color")
