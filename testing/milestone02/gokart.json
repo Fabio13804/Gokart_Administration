@@ -1,0 +1,185 @@
+[ {
+  "gokart_number" : "GKNMA01FJ",
+  "fuel_typ" : "benzin",
+  "ps" : 9,
+  "max_speed" : 90,
+  "weight" : 50.4,
+  "color" : "schwarz-weiss",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA02QJ",
+  "fuel_typ" : "elektro",
+  "ps" : 9,
+  "max_speed" : 100,
+  "weight" : 60.4,
+  "color" : "weiss",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA03HJ",
+  "fuel_typ" : "benzin",
+  "ps" : 9,
+  "max_speed" : 90,
+  "weight" : 50.4,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA04LJ",
+  "fuel_typ" : "benzin",
+  "ps" : 9,
+  "max_speed" : 90,
+  "weight" : 50.4,
+  "color" : "schwarz-rot",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA05FK",
+  "fuel_typ" : "benzin",
+  "ps" : 9,
+  "max_speed" : 90,
+  "weight" : 50.4,
+  "color" : "schwarz-weiss",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA07YJ",
+  "fuel_typ" : "benzin",
+  "ps" : 9,
+  "max_speed" : 90,
+  "weight" : 50.4,
+  "color" : "schwarz-weiss",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA08XJ",
+  "fuel_typ" : "benzin",
+  "ps" : 9,
+  "max_speed" : 90,
+  "weight" : 50.4,
+  "color" : "schwarz-weiss",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA09CJ",
+  "fuel_typ" : "benzin",
+  "ps" : 9,
+  "max_speed" : 90,
+  "weight" : 50.4,
+  "color" : "schwarz-weiss",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA010UP",
+  "fuel_typ" : "benzin",
+  "ps" : 9,
+  "max_speed" : 90,
+  "weight" : 50.4,
+  "color" : "schwarz-weiss",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA22FJ",
+  "fuel_typ" : "elektro",
+  "ps" : 30,
+  "max_speed" : 90,
+  "weight" : 120.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA71FJ",
+  "fuel_typ" : "Benzin",
+  "ps" : 30,
+  "max_speed" : 130,
+  "weight" : 120.0,
+  "color" : "gelb",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA41FJ",
+  "fuel_typ" : "elektro",
+  "ps" : 9,
+  "max_speed" : 100,
+  "weight" : 60.4,
+  "color" : "weiss",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA13FJ",
+  "fuel_typ" : "benzin",
+  "ps" : 30,
+  "max_speed" : 90,
+  "weight" : 120.0,
+  "color" : "blau",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA6FJ",
+  "fuel_typ" : "benzin",
+  "ps" : 0,
+  "max_speed" : 90,
+  "weight" : 120.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA95FJ",
+  "fuel_typ" : "benzin",
+  "ps" : 30,
+  "max_speed" : 0,
+  "weight" : 120.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA98FJ",
+  "fuel_typ" : "benzin",
+  "ps" : 30,
+  "max_speed" : 90,
+  "weight" : 0.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA61FJ",
+  "fuel_typ" : "djfjdkfjkjdsjkfjsdkjdfsjlsdjfjöajkdfjkasöjdfajökfjajöfjkajdfjödfjjaöfjajdöfjadfjödfjljfdjdfjl",
+  "ps" : 30,
+  "max_speed" : 90,
+  "weight" : 120.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA94FJ",
+  "fuel_typ" : "benzin",
+  "ps" : 30,
+  "max_speed" : 90000000,
+  "weight" : 120.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA10FJ",
+  "fuel_typ" : "benzin",
+  "ps" : 30,
+  "max_speed" : 90,
+  "weight" : 1.2090203920939024E20,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA58FJ",
+  "fuel_typ" : "b",
+  "ps" : 30,
+  "max_speed" : 90,
+  "weight" : 120.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA47FJ",
+  "fuel_typ" : "b",
+  "ps" : -3,
+  "max_speed" : 90,
+  "weight" : 120.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA14FJ",
+  "fuel_typ" : "benzin",
+  "ps" : 30,
+  "max_speed" : 0,
+  "weight" : 120.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+}, {
+  "gokart_number" : "GKNMA11FJ",
+  "fuel_typ" : "benzin",
+  "ps" : 30,
+  "max_speed" : 90,
+  "weight" : 0.0,
+  "color" : "schwarz",
+  "brake_typ" : "hydraulisch"
+} ]

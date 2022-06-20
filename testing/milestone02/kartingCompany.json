@@ -1,0 +1,33 @@
+[ {
+  "karting_companyID" : 40,
+  "name" : "spreiti",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 30,
+  "name" : "spreititrurig",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 73,
+  "name" : "spreititrurig",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 72,
+  "name" : "spreititrurig",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 94,
+  "name" : "spreiti",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 47,
+  "name" : "spreiti",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 53,
+  "name" : "spreiti",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 27,
+  "name" : "spreiti",
+  "restaurant" : true
+} ]

@@ -1,0 +1,2710 @@
+{
+	"info": {
+		"_postman_id": "d0729a89-f070-40f7-96bb-a1da0c58366e",
+		"name": "Gokart_Administration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "wrongURL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/kartingCompany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"kartingCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allGokarts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GokartsByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/read?uuid=GKNMA02QJ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "GKNMA02QJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GokartID_outOfRange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/read?uuid=GKNMA0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "GKNMA0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "blau",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart blank1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart blank2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart blank3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart blank4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart blank5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart blank6",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart long1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "djfjdkfjkjdsjkfjsdkjdfsjlsdjfjöajkdfjkasöjdfajökfjajöfjkajdfjödfjjaöfjajdöfjadfjödfjljfdjdfjl",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart long2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30939439034903490349034994390439043904390",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart long3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90000000",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart long4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120902039209390239320",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart long5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "jdfjöajkdfjöfjkjkdfjkdfjkljdfjdjköajdfkjdjkfajklödjklfdjkdjköfjksfdjkfdjkadjökfsjködasjkadfjökaöjdkjadfjkfdjklfdjkldflkjö",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart long6",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "jfjfjfjfjjfdkjdjfdfdjkfdjfdjkfdjfdjkdfjkfdfkjdfjkdfjajöadjfköjadfökjfakdafdkjdkfjajkfdldafjk",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart short1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "b",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart short2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "-3",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart short3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart short4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart short5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "s",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createGokart short6",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "fuel_typ",
+							"value": "benzin",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "schwarz",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateGokart",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "gokart_number",
+							"value": "GKNMA41FJ",
+							"type": "text"
+						},
+						{
+							"key": "fuel_typ",
+							"value": "elektro",
+							"type": "text"
+						},
+						{
+							"key": "ps",
+							"value": "9",
+							"type": "text"
+						},
+						{
+							"key": "max_speed",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "60.4",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "weiss",
+							"type": "text"
+						},
+						{
+							"key": "brake_typ",
+							"value": "hydraulisch",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "regexGokart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/read?uuid=GKNMA13FJF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "GKNMA13FJF"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteGokart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/gokart/delete?gokart_number=GKNMA24FJ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"gokart",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "gokart_number",
+							"value": "GKNMA24FJ"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allCircuits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CircuitByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/read?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"read"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CircuitID_outOfRange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/read?id=7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"read"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCircuit",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/delete?karting_companyID=81",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "karting_companyID",
+							"value": "81"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCircuit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "circuitID",
+							"value": "59",
+							"type": "text"
+						},
+						{
+							"key": "track_typ",
+							"value": "indoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "7.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "winti",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "6",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit blank1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit blank2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit blank3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit blank4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit blank5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit long1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoorfffffffffffffffffffffffffffffffffffffffff",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit long2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.300090900990099090099009",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit long3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit long4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "79889898988998898989",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit long5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "09900990090909090990",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit short1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "o",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit short2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "0.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit short3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "W",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit short4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCircuit short5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "track_typ",
+							"value": "outdoor",
+							"type": "text"
+						},
+						{
+							"key": "distance",
+							"value": "6.3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Winterthur",
+							"type": "text"
+						},
+						{
+							"key": "number_of_curves",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "number_of_straights",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/circuit/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"circuit",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allKarting_companys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KartingCompanyByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/read?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"read"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KartingCompany_outOfRange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/read?id=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"read"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateKarting_company",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "karting_companyID",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "spreitihahahahh",
+							"type": "text"
+						},
+						{
+							"key": "restaurant",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteKarting_company",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/delete?karting_companyID=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "karting_companyID",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createKarting_Company",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "spreitiHEHEHEH",
+							"type": "text"
+						},
+						{
+							"key": "restaurant",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createKarting_Company blank1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "restaurant",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createKarting_Company blank2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "spreiti",
+							"type": "text"
+						},
+						{
+							"key": "restaurant",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createKarting_Company long1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "sprieitititdskljfaökjfdjasjkdföjaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaöööööööööööööööööööööööö",
+							"type": "text"
+						},
+						{
+							"key": "restaurant",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createKarting_Company long2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "spreiti",
+							"type": "text"
+						},
+						{
+							"key": "restaurant",
+							"value": "dfkjasdöjfjkadsjködafkjökdajsljkasdfjkfdakjlödasfköjldfasjklöafdsjkölsdjkafökjlöfdasjklöfsdajklödfsakljadfskljfasdkjlö",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createKarting_Company short1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "s",
+							"type": "text"
+						},
+						{
+							"key": "restaurant",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createKarting_Company short2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "spreiti",
+							"type": "text"
+						},
+						{
+							"key": "restaurant",
+							"value": "f",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/Gokart_Administration-1.0/resource/kartingCompany/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Gokart_Administration-1.0",
+						"resource",
+						"kartingCompany",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
