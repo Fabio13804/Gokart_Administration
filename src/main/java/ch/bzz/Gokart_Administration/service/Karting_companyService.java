@@ -3,6 +3,7 @@ package ch.bzz.Gokart_Administration.service;
 import ch.bzz.Gokart_Administration.data.DataHandler;
 import ch.bzz.Gokart_Administration.model.Karting_company;
 
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -49,25 +50,18 @@ public class Karting_companyService {
 
 
     /**
-     * inserts a new book
-     * @param restaurant the fuel_typ
-     * @param name the color
+     * inserts a new karting_company
+     * @param karting_company the karting_company
      * @return Response
      */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertKarting_company(
-            @FormParam("name") String name,
-            @FormParam("restaurant") boolean restaurant
+            @Valid @BeanParam Karting_company karting_company
+
     ) {
-        Karting_company karting_company = new Karting_company();
         karting_company.setKarting_companyID((int) Math.floor(Math.random() * 101));
-        setAttributes(
-                karting_company,
-                name,
-                restaurant
-        );
 
         DataHandler.insertKarting_company(karting_company);
         return Response
@@ -77,29 +71,26 @@ public class Karting_companyService {
     }
 
     /**
-     * updates a new book
-     * @param karting_companyID the amount of ps
-     * @param name the color
-     * @param restaurant the weight
+     * updates a new karting_company
+     * @param karting_companyID the karting_companyID
+     * @param karting_company the karting_company
      * @return Response
      */
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateKarting_company(
-            @FormParam("karting_companyID") int karting_companyID,
-            @FormParam("name") String name,
-            @FormParam("restaurant") boolean restaurant
+            @Valid @BeanParam Karting_company karting_company,
+            @FormParam("karting_companyID") int karting_companyID
 
     ) {
         int httpStatus = 200;
-        Karting_company karting_company = DataHandler.getInstance().readKarting_companyByUUID(karting_companyID);
-        if (karting_company != null) {
-            setAttributes(
-                    karting_company,
-                    name,
-                    restaurant
-            );
+        Karting_company oldKarting_company = DataHandler.getInstance().readKarting_companyByUUID(karting_companyID);
+        if (oldKarting_company != null) {
+
+            oldKarting_company.setName(karting_company.getName());
+            oldKarting_company.setRestaurant(karting_company.getRestaurant());
+
 
             DataHandler.updateKarting_company();
         } else {
@@ -112,7 +103,7 @@ public class Karting_companyService {
     }
 
     /**
-     * deletes a book identified by its uuid
+     * deletes a karting_company identified by its uuid
      * @param karting_companyID  the key
      * @return  Response
      */
@@ -121,6 +112,7 @@ public class Karting_companyService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteKarting_company(
             @QueryParam("karting_companyID") int karting_companyID
+
     ) {
         int httpStatus = 200;
         if (!DataHandler.deleteKarting_company(karting_companyID)) {
@@ -130,23 +122,5 @@ public class Karting_companyService {
                 .status(httpStatus)
                 .entity("")
                 .build();
-    }
-
-
-
-    /**
-     * sets the attributes for the karting_company-object
-     * @param restaurant the key
-     * @param karting_company the title
-     * @param name the isbn
-     * @return Response
-     */
-    private void setAttributes(
-            Karting_company karting_company,
-            String name,
-            boolean restaurant
-    ) {
-        karting_company.setName(name);
-        karting_company.setRestaurant(restaurant);
     }
 }

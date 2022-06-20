@@ -1,8 +1,12 @@
 package ch.bzz.Gokart_Administration.model;
 
-import ch.bzz.Gokart_Administration.model.Gokart;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.util.List;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
 
 /**
  * a Karting company in Gokart_Administration
@@ -10,9 +14,17 @@ import java.util.List;
 
 public class Karting_company {
     private int karting_companyID;
-    private List<Gokart> gokartList;
-    private List<Circuit> circuitList;
+
+    @JsonIgnore
+    private Gokart gokart;
+
+    @JsonIgnore
+    private Circuit circuit;
+
+    @FormParam("name")
     private String name;
+
+    @FormParam("restaurant")
     private boolean restaurant;
 
 
@@ -24,20 +36,20 @@ public class Karting_company {
         this.karting_companyID = karting_companyID;
     }
 
-    public List<Gokart> getGokartList() {
-        return gokartList;
+    public Gokart getGokart() {
+        return gokart;
     }
 
-    public void setGokartList(List<Gokart> gokartList) {
-        this.gokartList = gokartList;
+    public void setGokart(Gokart gokart) {
+        this.gokart = gokart;
     }
 
-    public List<Circuit> getCircuitList() {
-        return circuitList;
+    public Circuit getCircuit() {
+        return circuit;
     }
 
-    public void setCircuitList(List<Circuit> circuitList) {
-        this.circuitList = circuitList;
+    public void setCircuit(Circuit circuit) {
+        this.circuit = circuit;
     }
 
     public String getName() {
@@ -48,7 +60,7 @@ public class Karting_company {
         this.name = name;
     }
 
-    public boolean isRestaurant() {
+    public boolean getRestaurant() {
         return restaurant;
     }
 
