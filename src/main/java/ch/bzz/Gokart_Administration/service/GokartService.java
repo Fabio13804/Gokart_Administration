@@ -4,7 +4,9 @@ package ch.bzz.Gokart_Administration.service;
 import ch.bzz.Gokart_Administration.data.DataHandler;
 import ch.bzz.Gokart_Administration.model.Gokart;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -29,6 +31,7 @@ public class GokartService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response readGokart(
             @NotEmpty
+            @Pattern(regexp = "[A-Za-z]{5}[0-9]{1,}[A-Za-z]{2}")
             @QueryParam("uuid") String gokart_number) {
         int httpStatus = 200;
         Gokart gokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
@@ -43,37 +46,17 @@ public class GokartService {
 
 
     /**
-     * inserts a new book
-     * @param fuel_typ the fuel_typ
-     * @param ps the amount of ps
-     * @param max_speed the max. speed
-     * @param weight the weight
-     * @param color the color
-     * @param brake_typ the brake typ
+     * inserts a new Gokart
+     * @param gokart the gokart
      * @return Response
      */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertGokart(
-            @FormParam("fuel_typ") String fuel_typ,
-            @FormParam("ps") int ps,
-            @FormParam("max_speed") int max_speed,
-            @FormParam("weight") double weight,
-            @FormParam("color") String color,
-            @FormParam("brake_typ") String brake_typ
+            @Valid @BeanParam Gokart gokart
     ) {
-        Gokart gokart = new Gokart();
         gokart.setGokart_number("GKNMA" + (int) Math.floor(Math.random() * 101) + "FJ");
-        setAttributes(
-                gokart,
-                fuel_typ,
-                ps,
-                max_speed,
-                weight,
-                color,
-                brake_typ
-        );
 
         DataHandler.insertGokart(gokart);
         return Response
@@ -83,40 +66,29 @@ public class GokartService {
     }
 
     /**
-     * updates a new book
+     * updates a new Gokart
      * @param gokart_number the key
-     * @param fuel_typ the title
-     * @param ps the author
-     * @param max_speed the uuid of the publisher
-     * @param weight the price
-     * @param color the isbn
-     * @param brake_typ the isbn
+     * @param gokart the gokart
      * @return Response
      */
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateGokart(
-            @FormParam("gokart_number") String gokart_number,
-            @FormParam("fuel_typ") String fuel_typ,
-            @FormParam("ps") int ps,
-            @FormParam("max_speed") int max_speed,
-            @FormParam("weight") double weight,
-            @FormParam("color") String color,
-            @FormParam("brake_typ") String brake_typ
+            @Valid @BeanParam Gokart gokart,
+            @FormParam("gokart_number") String gokart_number
     ) {
         int httpStatus = 200;
-        Gokart gokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
-        if (gokart != null) {
-            setAttributes(
-                    gokart,
-                    fuel_typ,
-                    ps,
-                    max_speed,
-                    weight,
-                    color,
-                    brake_typ
-            );
+
+        Gokart oldGokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
+        if (oldGokart != null) {
+
+            oldGokart.setFuel_typ(gokart.getFuel_typ());
+            oldGokart.setPs(gokart.getPs());
+            oldGokart.setMax_speed(gokart.getMax_speed());
+            oldGokart.setWeight(gokart.getWeight());
+            oldGokart.setColor(gokart.getColor());
+            oldGokart.setBrake_typ(gokart.getBrake_typ());
 
             DataHandler.updateGokart();
         } else {
@@ -137,6 +109,8 @@ public class GokartService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteGokartk(
+            @NotEmpty
+            @Pattern(regexp = "[A-Za-z]{5}[1-9]{1,}[A-Za-z]{2}")
             @QueryParam("gokart_number") String gokart_number
     ) {
         int httpStatus = 200;
@@ -147,35 +121,6 @@ public class GokartService {
                 .status(httpStatus)
                 .entity("")
                 .build();
-    }
-
-
-
-    /**
-     * sets the attributes for the gokart-object
-     * @param gokart  the gokart-object
-     * @param fuel_typ  the fuel typ
-     * @param ps  the author
-     * @param max_speed  the uuid of the publisher
-     * @param weight  the price
-     * @param color the color
-     * @param brake_typ the brake typ
-     */
-    private void setAttributes(
-            Gokart gokart,
-            String fuel_typ,
-            int ps,
-            int max_speed,
-            double weight,
-            String color,
-            String brake_typ
-    ) {
-        gokart.setFuel_typ(fuel_typ);
-        gokart.setPs(ps);
-        gokart.setMax_speed(max_speed);
-        gokart.setWeight(weight);
-        gokart.setColor(color);
-        gokart.setBrake_typ(brake_typ);
     }
 
 }

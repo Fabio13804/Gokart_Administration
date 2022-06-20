@@ -2,6 +2,9 @@ package ch.bzz.Gokart_Administration.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.validation.constraints.*;
+import javax.ws.rs.FormParam;
+
 /**
  * a Circuit in Gokart_Administration
  */
@@ -11,11 +14,32 @@ public class Circuit {
     @JsonIgnore
     private Karting_company karting_company;
 
+    @FormParam("circuitID")
+    @NotNull
     private int circuitID;
+
+    @FormParam("track_typ")
+    @NotEmpty
+    @Size(min=4, max=50)
+    @Pattern(regexp = "^(indoor|outdoor|Indoor|Outdoor)$")
     private String track_typ;
+
+    @FormParam("distance")
+    @NotNull
     private double distance;
+
+    @FormParam("name")
+    @NotEmpty
     private String name;
+
+    @FormParam("number_of_curves")
+    @NotNull
+    @Min(value=4) @Max(value=50)
     private int number_of_curves;
+
+    @FormParam("number_of_straights")
+    @NotNull
+    @Min(value=2) @Max(value=50)
     private int number_of_straights;
 
     public Karting_company getKarting_company() {
