@@ -18,10 +18,19 @@ public class GokartService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response listGokarts() {
-        List<Gokart> gokartList = DataHandler.getInstance().readAllGokarts();
+    public Response listGokarts(
+            @CookieParam("userRole") String userRole) {
+
+        List<Gokart> gokartList = null;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")){
+            httpStatus = 403;
+        }else {
+            httpStatus = 200;
+            gokartList = DataHandler.getInstance().readAllGokarts();
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(gokartList)
                 .build();
     }
@@ -47,6 +56,7 @@ public class GokartService {
 
     /**
      * inserts a new Gokart
+     *
      * @param gokart the gokart
      * @return Response
      */
@@ -67,8 +77,9 @@ public class GokartService {
 
     /**
      * updates a new Gokart
+     *
      * @param gokart_number the key
-     * @param gokart the gokart
+     * @param gokart        the gokart
      * @return Response
      */
     @PUT
@@ -102,8 +113,9 @@ public class GokartService {
 
     /**
      * deletes a book identified by its uuid
-     * @param gokart_number  the key
-     * @return  Response
+     *
+     * @param gokart_number the key
+     * @return Response
      */
     @DELETE
     @Path("delete")

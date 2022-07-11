@@ -29,6 +29,7 @@ public class Config extends Application {
         providers.add(GokartService.class);
         providers.add(Karting_companyService.class);
         providers.add(CircuitService.class);
+        providers.add(UserService.class);
         return providers;
     }
 
