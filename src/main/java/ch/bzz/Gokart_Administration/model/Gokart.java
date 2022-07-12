@@ -24,7 +24,7 @@ public class Gokart {
     private String fuel_typ;
 
     @FormParam("ps")
-    @NotEmpty
+    @NotNull
     @Min(value = 1)
     @Max(value = 200)
     private int ps;

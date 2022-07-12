@@ -19,7 +19,8 @@ public class GokartService {
     @Produces(MediaType.APPLICATION_JSON)
 
     public Response listGokarts(
-            @CookieParam("userRole") String userRole) {
+            @CookieParam("userRole") String userRole
+    ) {
 
         List<Gokart> gokartList = null;
         int httpStatus;
@@ -41,17 +42,23 @@ public class GokartService {
     public Response readGokart(
             @NotEmpty
             @Pattern(regexp = "[A-Za-z]{5}[0-9]{1,}[A-Za-z]{2}")
-            @QueryParam("uuid") String gokart_number) {
-        int httpStatus = 200;
-        Gokart gokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
-        if (gokart == null) {
-            httpStatus = 410;
+            @QueryParam("uuid") String gokart_number,
+            @CookieParam("userRole") String userRole
+    ) {
+        Gokart gokart = null;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")){
+            httpStatus = 403;
+        }else {
+            httpStatus = 200;
+            gokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
         }
         return Response
                 .status(httpStatus)
                 .entity(gokart)
                 .build();
     }
+
 
 
     /**
@@ -64,13 +71,19 @@ public class GokartService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertGokart(
-            @Valid @BeanParam Gokart gokart
+            @Valid @BeanParam Gokart gokart,
+            @CookieParam("userRole") String userRole
     ) {
-        gokart.setGokart_number("GKNMA" + (int) Math.floor(Math.random() * 101) + "FJ");
-
-        DataHandler.insertGokart(gokart);
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")){
+            httpStatus = 403;
+        }else {
+            httpStatus = 200;
+            gokart.setGokart_number("GKNMA" + (int) Math.floor(Math.random() * 101) + "FJ");
+            DataHandler.insertGokart(gokart);
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity("")
                 .build();
     }
@@ -87,29 +100,36 @@ public class GokartService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateGokart(
             @Valid @BeanParam Gokart gokart,
-            @FormParam("gokart_number") String gokart_number
+            @FormParam("gokart_number") String gokart_number,
+            @CookieParam("userRole") String userRole
     ) {
-        int httpStatus = 200;
 
+        int httpStatus;
         Gokart oldGokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
-        if (oldGokart != null) {
 
-            oldGokart.setFuel_typ(gokart.getFuel_typ());
-            oldGokart.setPs(gokart.getPs());
-            oldGokart.setMax_speed(gokart.getMax_speed());
-            oldGokart.setWeight(gokart.getWeight());
-            oldGokart.setColor(gokart.getColor());
-            oldGokart.setBrake_typ(gokart.getBrake_typ());
-
-            DataHandler.updateGokart();
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 403;
         } else {
-            httpStatus = 410;
+            httpStatus = 200;
+            if (oldGokart != null) {
+                oldGokart.setFuel_typ(gokart.getFuel_typ());
+                oldGokart.setPs(gokart.getPs());
+                oldGokart.setMax_speed(gokart.getMax_speed());
+                oldGokart.setWeight(gokart.getWeight());
+                oldGokart.setColor(gokart.getColor());
+                oldGokart.setBrake_typ(gokart.getBrake_typ());
+
+                DataHandler.updateGokart();
+            } else {
+                httpStatus = 410;
+            }
         }
         return Response
                 .status(httpStatus)
                 .entity("")
                 .build();
     }
+
 
     /**
      * deletes a book identified by its uuid
@@ -123,12 +143,19 @@ public class GokartService {
     public Response deleteGokartk(
             @NotEmpty
             @Pattern(regexp = "[A-Za-z]{5}[1-9]{1,}[A-Za-z]{2}")
-            @QueryParam("gokart_number") String gokart_number
+            @QueryParam("gokart_number") String gokart_number,
+            @CookieParam("userRole") String userRole
     ) {
-        int httpStatus = 200;
-        if (!DataHandler.deleteGokart(gokart_number)) {
-            httpStatus = 410;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 403;
+        } else {
+            httpStatus = 200;
+            if (!DataHandler.deleteGokart(gokart_number)) {
+                httpStatus = 410;
+            }
         }
+
         return Response
                 .status(httpStatus)
                 .entity("")

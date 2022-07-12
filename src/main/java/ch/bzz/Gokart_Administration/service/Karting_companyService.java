@@ -1,6 +1,7 @@
 package ch.bzz.Gokart_Administration.service;
 
 import ch.bzz.Gokart_Administration.data.DataHandler;
+import ch.bzz.Gokart_Administration.model.Gokart;
 import ch.bzz.Gokart_Administration.model.Karting_company;
 
 import javax.validation.Valid;
@@ -23,11 +24,20 @@ public class Karting_companyService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listKarting_companys() {
-        List<Karting_company> karting_companyList = DataHandler.getInstance().readAllKarting_companys();
+    public Response listKarting_companys(
+            @CookieParam("userRole") String userRole
+    ) {
 
+        List<Karting_company> karting_companyList = null;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")){
+            httpStatus = 403;
+        }else {
+            httpStatus = 200;
+            karting_companyList = DataHandler.getInstance().readAllKarting_companys();
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(karting_companyList)
                 .build();
     }
@@ -35,11 +45,17 @@ public class Karting_companyService {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readKarting_company(@QueryParam("id") int karting_companyID) {
-        int httpStatus = 200;
-        Karting_company karting_company = DataHandler.getInstance().readKarting_companyByUUID(karting_companyID);
-        if (karting_company == null) {
-            httpStatus = 410;
+    public Response readKarting_company(
+            @QueryParam("id") int karting_companyID,
+            @CookieParam("userRole") String userRole
+    ) {
+        Karting_company karting_company = null;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")){
+            httpStatus = 403;
+        }else {
+            httpStatus = 200;
+            karting_company = DataHandler.getInstance().readKarting_companyByUUID(karting_companyID);
         }
         return Response
                 .status(httpStatus)
@@ -58,14 +74,20 @@ public class Karting_companyService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertKarting_company(
-            @Valid @BeanParam Karting_company karting_company
-
+            @Valid @BeanParam Karting_company karting_company,
+            @CookieParam("userRole") String userRole
     ) {
-        karting_company.setKarting_companyID((int) Math.floor(Math.random() * 101));
 
-        DataHandler.insertKarting_company(karting_company);
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")){
+            httpStatus = 403;
+        }else {
+            httpStatus = 200;
+            karting_company.setKarting_companyID((int) Math.floor(Math.random() * 101));
+            DataHandler.insertKarting_company(karting_company);
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity("")
                 .build();
     }
@@ -81,20 +103,24 @@ public class Karting_companyService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateKarting_company(
             @Valid @BeanParam Karting_company karting_company,
-            @FormParam("karting_companyID") int karting_companyID
-
+            @FormParam("karting_companyID") int karting_companyID,
+            @CookieParam("userRole") String userRole
     ) {
-        int httpStatus = 200;
+        int httpStatus;
         Karting_company oldKarting_company = DataHandler.getInstance().readKarting_companyByUUID(karting_companyID);
-        if (oldKarting_company != null) {
 
-            oldKarting_company.setName(karting_company.getName());
-            oldKarting_company.setRestaurant(karting_company.getRestaurant());
-
-
-            DataHandler.updateKarting_company();
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 403;
         } else {
-            httpStatus = 410;
+            httpStatus = 200;
+            if (oldKarting_company != null) {
+                oldKarting_company.setName(karting_company.getName());
+                oldKarting_company.setRestaurant(karting_company.getRestaurant());
+
+                DataHandler.updateKarting_company();
+            } else {
+                httpStatus = 410;
+            }
         }
         return Response
                 .status(httpStatus)
@@ -111,13 +137,19 @@ public class Karting_companyService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteKarting_company(
-            @QueryParam("karting_companyID") int karting_companyID
-
+            @QueryParam("karting_companyID") int karting_companyID,
+            @CookieParam("userRole") String userRole
     ) {
-        int httpStatus = 200;
-        if (!DataHandler.deleteKarting_company(karting_companyID)) {
-            httpStatus = 410;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 403;
+        } else {
+            httpStatus = 200;
+            if (!DataHandler.deleteKarting_company(karting_companyID)) {
+                httpStatus = 410;
+            }
         }
+
         return Response
                 .status(httpStatus)
                 .entity("")
