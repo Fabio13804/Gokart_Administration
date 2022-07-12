@@ -19,7 +19,8 @@ public class Karting_companyService {
 
     /**
      * confirms the application runs
-     * @return  message
+     *
+     * @return message
      */
     @GET
     @Path("list")
@@ -30,9 +31,9 @@ public class Karting_companyService {
 
         List<Karting_company> karting_companyList = null;
         int httpStatus;
-        if (userRole == null || userRole.equals("guest")){
+        if (userRole == null || userRole.equals("guest")) {
             httpStatus = 403;
-        }else {
+        } else {
             httpStatus = 200;
             karting_companyList = DataHandler.getInstance().readAllKarting_companys();
         }
@@ -51,9 +52,9 @@ public class Karting_companyService {
     ) {
         Karting_company karting_company = null;
         int httpStatus;
-        if (userRole == null || userRole.equals("guest")){
+        if (userRole == null || userRole.equals("guest")) {
             httpStatus = 403;
-        }else {
+        } else {
             httpStatus = 200;
             karting_company = DataHandler.getInstance().readKarting_companyByUUID(karting_companyID);
         }
@@ -64,9 +65,9 @@ public class Karting_companyService {
     }
 
 
-
     /**
      * inserts a new karting_company
+     *
      * @param karting_company the karting_company
      * @return Response
      */
@@ -79,9 +80,9 @@ public class Karting_companyService {
     ) {
 
         int httpStatus;
-        if (userRole == null || userRole.equals("guest")){
+        if (userRole == null || userRole.equals("guest")) {
             httpStatus = 403;
-        }else {
+        } else {
             httpStatus = 200;
             karting_company.setKarting_companyID((int) Math.floor(Math.random() * 101));
             DataHandler.insertKarting_company(karting_company);
@@ -94,8 +95,9 @@ public class Karting_companyService {
 
     /**
      * updates a new karting_company
+     *
      * @param karting_companyID the karting_companyID
-     * @param karting_company the karting_company
+     * @param karting_company   the karting_company
      * @return Response
      */
     @PUT
@@ -130,8 +132,9 @@ public class Karting_companyService {
 
     /**
      * deletes a karting_company identified by its uuid
-     * @param karting_companyID  the key
-     * @return  Response
+     *
+     * @param karting_companyID the key
+     * @return Response
      */
     @DELETE
     @Path("delete")

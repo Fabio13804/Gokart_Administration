@@ -22,7 +22,7 @@ public class Karting_company {
     private Circuit circuit;
 
     @FormParam("name")
-    @Size(min=3, max=50)
+    @Size(min = 3, max = 50)
     private String name;
 
     @FormParam("restaurant")

@@ -1,4 +1,5 @@
 package ch.bzz.Gokart_Administration.service;
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.io.FileInputStream;

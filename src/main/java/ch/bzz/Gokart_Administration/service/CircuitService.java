@@ -2,6 +2,7 @@ package ch.bzz.Gokart_Administration.service;
 
 import ch.bzz.Gokart_Administration.data.DataHandler;
 import ch.bzz.Gokart_Administration.model.Circuit;
+import ch.bzz.Gokart_Administration.model.Gokart;
 
 import javax.validation.Valid;
 import javax.ws.rs.*;
@@ -15,21 +16,38 @@ public class CircuitService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
 
-    public Response listCircuits() {
-        List<Circuit> circuitList = DataHandler.getInstance().readAllCircuits();
+    public Response listCircuits(
+            @CookieParam("userRole") String userRole
+    ) {
+        List<Circuit> circuitList = null;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 403;
+        } else {
+            httpStatus = 200;
+            circuitList = DataHandler.getInstance().readAllCircuits();
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(circuitList)
                 .build();
     }
+
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readCircuit(@QueryParam("id") int circuitID) {
-        int httpStatus = 200;
-        Circuit circuit = DataHandler.getInstance().readCircuitByID(circuitID);
-        if (circuit == null) {
-            httpStatus = 410;
+    public Response readCircuit(
+            @QueryParam("id") int circuitID,
+            @CookieParam("userRole") String userRole
+    ) {
+
+        Circuit circuit = null;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 403;
+        } else {
+            httpStatus = 200;
+            circuit = DataHandler.getInstance().readCircuitByID(circuitID);
         }
         return Response
                 .status(httpStatus)
@@ -40,6 +58,7 @@ public class CircuitService {
 
     /**
      * inserts a new circuit
+     *
      * @param circuit the circuit
      * @return Response
      */
@@ -47,20 +66,28 @@ public class CircuitService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertCircuit(
-            @Valid @BeanParam Circuit circuit
+            @Valid @BeanParam Circuit circuit,
+            @CookieParam("userRole") String userRole
     ) {
-        circuit.setCircuitID((int) Math.floor(Math.random() * 101));
-
-        DataHandler.insertCircuit(circuit);
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 403;
+        } else {
+            httpStatus = 200;
+            circuit.setCircuitID((int) Math.floor(Math.random() * 101));
+            DataHandler.insertCircuit(circuit);
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity("")
                 .build();
+
     }
 
     /**
      * updates a new circuit
-     * @param circuit the circuit
+     *
+     * @param circuit   the circuit
      * @param circuitID the Key
      * @return Response
      */
@@ -69,22 +96,27 @@ public class CircuitService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateCircuit(
             @Valid @BeanParam Circuit circuit,
-            @FormParam("circuitID") int circuitID
-
+            @FormParam("circuitID") int circuitID,
+            @CookieParam("userRole") String userRole
     ) {
-        int httpStatus = 200;
+        int httpStatus;
         Circuit oldCircuit = DataHandler.getInstance().readCircuitByID(circuitID);
 
-        if (oldCircuit != null) {
-            oldCircuit.setTrack_typ(circuit.getTrack_typ());
-            oldCircuit.setDistance(circuit.getDistance());
-            oldCircuit.setName(circuit.getName());
-            oldCircuit.setNumber_of_curves(circuit.getNumber_of_curves());
-            oldCircuit.setNumber_of_straights(circuit.getNumber_of_straights());
-
-            DataHandler.updateCircuit();
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 403;
         } else {
-            httpStatus = 410;
+            httpStatus = 200;
+            if (oldCircuit != null) {
+                oldCircuit.setTrack_typ(circuit.getTrack_typ());
+                oldCircuit.setDistance(circuit.getDistance());
+                oldCircuit.setName(circuit.getName());
+                oldCircuit.setNumber_of_curves(circuit.getNumber_of_curves());
+                oldCircuit.setNumber_of_straights(circuit.getNumber_of_straights());
+
+                DataHandler.updateCircuit();
+            } else {
+                httpStatus = 410;
+            }
         }
         return Response
                 .status(httpStatus)
@@ -94,19 +126,27 @@ public class CircuitService {
 
     /**
      * deletes a circuit identified by its uuid
-     * @param circuitID  the key
-     * @return  Response
+     *
+     * @param circuitID the key
+     * @return Response
      */
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteCircuit(
-            @QueryParam("circuitID") int circuitID
+            @QueryParam("circuitID") int circuitID,
+            @CookieParam("userRole") String userRole
     ) {
-        int httpStatus = 200;
-        if (!DataHandler.deleteCircuit(circuitID)) {
-            httpStatus = 410;
+        int httpStatus;
+        if (userRole == null || userRole.equals("guest")) {
+            httpStatus = 403;
+        } else {
+            httpStatus = 200;
+            if (!DataHandler.deleteCircuit(circuitID)) {
+                httpStatus = 410;
+            }
         }
+
         return Response
                 .status(httpStatus)
                 .entity("")

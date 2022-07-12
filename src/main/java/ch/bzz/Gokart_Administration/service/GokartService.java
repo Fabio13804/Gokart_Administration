@@ -24,9 +24,9 @@ public class GokartService {
 
         List<Gokart> gokartList = null;
         int httpStatus;
-        if (userRole == null || userRole.equals("guest")){
+        if (userRole == null || userRole.equals("guest")) {
             httpStatus = 403;
-        }else {
+        } else {
             httpStatus = 200;
             gokartList = DataHandler.getInstance().readAllGokarts();
         }
@@ -47,9 +47,9 @@ public class GokartService {
     ) {
         Gokart gokart = null;
         int httpStatus;
-        if (userRole == null || userRole.equals("guest")){
+        if (userRole == null || userRole.equals("guest")) {
             httpStatus = 403;
-        }else {
+        } else {
             httpStatus = 200;
             gokart = DataHandler.getInstance().readGokartByGokart_number(gokart_number);
         }
@@ -58,7 +58,6 @@ public class GokartService {
                 .entity(gokart)
                 .build();
     }
-
 
 
     /**
@@ -75,9 +74,9 @@ public class GokartService {
             @CookieParam("userRole") String userRole
     ) {
         int httpStatus;
-        if (userRole == null || userRole.equals("guest")){
+        if (userRole == null || userRole.equals("guest")) {
             httpStatus = 403;
-        }else {
+        } else {
             httpStatus = 200;
             gokart.setGokart_number("GKNMA" + (int) Math.floor(Math.random() * 101) + "FJ");
             DataHandler.insertGokart(gokart);

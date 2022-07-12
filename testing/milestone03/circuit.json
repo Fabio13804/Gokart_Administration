@@ -1,0 +1,141 @@
+[ {
+  "circuitID" : 1,
+  "track_typ" : "indoor",
+  "distance" : 5.3,
+  "name" : "wohle",
+  "number_of_curves" : 15,
+  "number_of_straights" : 3
+}, {
+  "circuitID" : 2,
+  "track_typ" : "outdoor",
+  "distance" : 5.3,
+  "name" : "wohle",
+  "number_of_curves" : 4,
+  "number_of_straights" : 3
+}, {
+  "circuitID" : 3,
+  "track_typ" : "indoor",
+  "distance" : 5.3,
+  "name" : "wohle",
+  "number_of_curves" : 12,
+  "number_of_straights" : 3
+}, {
+  "circuitID" : 4,
+  "track_typ" : "outdoor",
+  "distance" : 5.3,
+  "name" : "wohle",
+  "number_of_curves" : 4,
+  "number_of_straights" : 3
+}, {
+  "circuitID" : 44,
+  "track_typ" : "outdoor",
+  "distance" : 7.3,
+  "name" : "winti",
+  "number_of_curves" : 8,
+  "number_of_straights" : 6
+}, {
+  "circuitID" : 10,
+  "track_typ" : "Outdoor",
+  "distance" : 6.3,
+  "name" : "wohle",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 17,
+  "track_typ" : "Outdoor",
+  "distance" : 6.3,
+  "name" : "wohle",
+  "number_of_curves" : 4,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 75,
+  "track_typ" : "Outdoor",
+  "distance" : 6.3,
+  "name" : "anouk",
+  "number_of_curves" : 4,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 12,
+  "track_typ" : "outdoor",
+  "distance" : 6.3,
+  "name" : "Winterthur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 7,
+  "track_typ" : "outdoor",
+  "distance" : 0.0,
+  "name" : "Winterthur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 79,
+  "track_typ" : "outdoor",
+  "distance" : 6.300090900990099,
+  "name" : "Winterthur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 73,
+  "track_typ" : "outdoor",
+  "distance" : 6.3,
+  "name" : "Winterthuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 76,
+  "track_typ" : "outdoor",
+  "distance" : 0.3,
+  "name" : "Winterthur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 52,
+  "track_typ" : "outdoor",
+  "distance" : 6.3,
+  "name" : "W",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 47,
+  "track_typ" : "outdoor",
+  "distance" : 6.3,
+  "name" : "Winterthur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 29,
+  "track_typ" : "outdoor",
+  "distance" : 0.0,
+  "name" : "Winterthur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 90,
+  "track_typ" : "outdoor",
+  "distance" : 6.300090900990099,
+  "name" : "Winterthur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 62,
+  "track_typ" : "outdoor",
+  "distance" : 6.3,
+  "name" : "Winterthuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 4,
+  "track_typ" : "outdoor",
+  "distance" : 0.3,
+  "name" : "Winterthur",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+}, {
+  "circuitID" : 90,
+  "track_typ" : "outdoor",
+  "distance" : 6.3,
+  "name" : "W",
+  "number_of_curves" : 7,
+  "number_of_straights" : 5
+} ]

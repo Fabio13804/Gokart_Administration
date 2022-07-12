@@ -37,6 +37,7 @@ public class DataHandler {
 
     /**
      * gets the only instance of this class
+     *
      * @return
      */
     public static DataHandler getInstance() {
@@ -48,6 +49,7 @@ public class DataHandler {
 
     /**
      * reads all gokarts
+     *
      * @return list of gokarts
      */
     public List<Gokart> readAllGokarts() {
@@ -56,6 +58,7 @@ public class DataHandler {
 
     /**
      * reads a gokart by its gokart_number
+     *
      * @param gokart_number
      * @return the Gokart (null=not found)
      */
@@ -71,6 +74,7 @@ public class DataHandler {
 
     /**
      * reads all Karting_companys
+     *
      * @return list of Karting_companys
      */
     public List<Karting_company> readAllKarting_companys() {
@@ -79,6 +83,7 @@ public class DataHandler {
 
     /**
      * reads a karting_company by its uuid
+     *
      * @param karting_companyID
      * @return the karting_company (null=not found)
      */
@@ -95,6 +100,7 @@ public class DataHandler {
 
     /**
      * reads all Circuits
+     *
      * @return list of Circuits
      */
     public List<Circuit> readAllCircuits() {
@@ -103,6 +109,7 @@ public class DataHandler {
 
     /**
      * reads a karting_company by its uuid
+     *
      * @param circuitID
      * @return the karting_company (null=not found)
      */
@@ -262,6 +269,7 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
+
     /**
      * updates the bookList
      */
@@ -271,8 +279,9 @@ public class DataHandler {
 
     /**
      * deletes a book identified by the bookUUID
-     * @param gokart_number  the key
-     * @return  success=true/false
+     *
+     * @param gokart_number the key
+     * @return success=true/false
      */
     public static boolean deleteGokart(String gokart_number) {
         Gokart gokart = getInstance().readGokartByGokart_number(gokart_number);
@@ -314,6 +323,7 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
+
     /**
      * updates the bookList
      */
@@ -323,8 +333,9 @@ public class DataHandler {
 
     /**
      * deletes a circuit identified by the circuitID
-     * @param circuitID  the key
-     * @return  success=true/false
+     *
+     * @param circuitID the key
+     * @return success=true/false
      */
     public static boolean deleteCircuit(int circuitID) {
         Circuit circuit = getInstance().readCircuitByID(circuitID);
@@ -366,6 +377,7 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
+
     /**
      * updates the bookList
      */
@@ -375,8 +387,9 @@ public class DataHandler {
 
     /**
      * deletes a karting_company identified by the karting_companyID
-     * @param karting_companyID  the key
-     * @return  success=true/false
+     *
+     * @param karting_companyID the key
+     * @return success=true/false
      */
     public static boolean deleteKarting_company(int karting_companyID) {
         Karting_company karting_company = getInstance().readKarting_companyByUUID(karting_companyID);
@@ -388,7 +401,6 @@ public class DataHandler {
             return false;
         }
     }
-
 
 
 }

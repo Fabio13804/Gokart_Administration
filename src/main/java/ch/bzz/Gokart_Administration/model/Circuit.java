@@ -20,7 +20,7 @@ public class Circuit {
 
     @FormParam("track_typ")
     @NotEmpty
-    @Size(min=4, max=50)
+    @Size(min = 4, max = 50)
     @Pattern(regexp = "^(indoor|outdoor|Indoor|Outdoor)$")
     private String track_typ;
 
@@ -34,12 +34,14 @@ public class Circuit {
 
     @FormParam("number_of_curves")
     @NotNull
-    @Min(value=4) @Max(value=50)
+    @Min(value = 4)
+    @Max(value = 50)
     private int number_of_curves;
 
     @FormParam("number_of_straights")
     @NotNull
-    @Min(value=2) @Max(value=50)
+    @Min(value = 2)
+    @Max(value = 50)
     private int number_of_straights;
 
     public Karting_company getKarting_company() {

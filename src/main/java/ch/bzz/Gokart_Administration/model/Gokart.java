@@ -19,7 +19,7 @@ public class Gokart {
     private String gokart_number;
 
     @FormParam("fuel_typ")
-    @Size(min=3, max = 50)
+    @Size(min = 3, max = 50)
     @NotEmpty
     private String fuel_typ;
 
@@ -42,12 +42,12 @@ public class Gokart {
 
     @FormParam("color")
     @NotEmpty
-    @Size(min=2, max=40)
+    @Size(min = 2, max = 40)
     private String color;
 
     @FormParam("brake_typ")
     @NotEmpty
-    @Size(min=5, max=40)
+    @Size(min = 5, max = 40)
     private String brake_typ;
 
     public Karting_company getKarting_company() {

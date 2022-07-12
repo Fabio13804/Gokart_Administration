@@ -1,0 +1,65 @@
+[ {
+  "karting_companyID" : 40,
+  "name" : "spreiti",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 30,
+  "name" : "spreititrurig",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 73,
+  "name" : "spreititrurig",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 72,
+  "name" : "spreititrurig",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 94,
+  "name" : "spreiti",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 47,
+  "name" : "spreiti",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 53,
+  "name" : "spreiti",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 27,
+  "name" : "spreiti",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 11,
+  "name" : "spreitiHEHEHEH",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 89,
+  "name" : "spreiti",
+  "restaurant" : false
+}, {
+  "karting_companyID" : 32,
+  "name" : "spreiti",
+  "restaurant" : false
+}, {
+  "karting_companyID" : 30,
+  "name" : "spreiti",
+  "restaurant" : false
+}, {
+  "karting_companyID" : 36,
+  "name" : "spreitiHEHEHEH",
+  "restaurant" : true
+}, {
+  "karting_companyID" : 79,
+  "name" : "spreiti",
+  "restaurant" : false
+}, {
+  "karting_companyID" : 84,
+  "name" : "spreiti",
+  "restaurant" : false
+}, {
+  "karting_companyID" : 36,
+  "name" : "spreiti",
+  "restaurant" : false
+} ]
